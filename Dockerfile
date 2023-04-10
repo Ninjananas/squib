@@ -1,6 +1,6 @@
 # This is the official Squib Docker image.
 #
-FROM ruby:3.0-slim
+FROM ruby:3.2-slim
 WORKDIR /usr/src/app
 
 LABEL org.squib.url=http://squib.rocks \
@@ -13,6 +13,8 @@ RUN apt-get update && \
     ruby-dev \
     ruby \
     ruby-gdk-pixbuf2 \
+    libgdk-pixbuf2.0-dev \
+    librsvg2-dev \
     git \
     fonts-open-sans
 
@@ -21,7 +23,7 @@ COPY . /usr/src/app
 RUN rm -f /usr/src/app/Gemfile.lock
 RUN gem install bundler
 RUN bundle install
-RUN bundle exec rake install
+# RUN bundle exec rake install
 
-# ENTRYPOINT [ "sh" ]
+ENTRYPOINT [ "bash" ]
 
