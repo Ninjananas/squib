@@ -1,6 +1,11 @@
 # Squib CHANGELOG
 Squib follows [semantic versioning](http://semver.org).
 
+## v0.19.0 / 2025-01-12
+
+Chores:
+* Bumping pango & rsvg2 to 4.2, roo to 2.10
+
 ## v0.19.0 / 2023-04-08
 
 Chores:
